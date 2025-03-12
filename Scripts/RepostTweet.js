@@ -11,7 +11,8 @@ module.exports = async (profileData) => {
         await page.setViewport({ width: 1920, height: 1080 });
 
         // Define the path to your file containing tweet URLs
-        const filePath = "C:\\Users\\ahlem\\OneDrive\\Bureau\\Valex-JS\\backend\\Repost.txt";
+        const path = require('path');
+        const filePath = path.join(process.env.FILE_PATH || '/var/www/valex-js/backend', 'Repost.txt');
 
         // Read file content asynchronously
         const data = await fs.promises.readFile(filePath, 'utf8');

@@ -12,7 +12,8 @@ module.exports = async (profileData) => {
         // Set the viewport to 1920x1080
         await page.setViewport({ width: 1920, height: 1080 });
 
-        const filePath = "C:\\Users\\ahlem\\OneDrive\\Bureau\\Valex-JS\\backend\\Comment.txt";
+        const path = require('path');
+        const filePath = path.join(process.env.FILE_PATH || '/var/www/valex-js/backend', 'Comment.txt');
 
         // Read file content asynchronously
         const data = await fs.promises.readFile(filePath, 'utf8');

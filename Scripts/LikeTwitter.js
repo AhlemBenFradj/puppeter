@@ -11,7 +11,8 @@ module.exports = async (profileData) => {
         await page.setViewport({ width: 1920, height: 1080 });
 
         // Define the path to your file
-        const filePath = "C:\\Users\\ahlem\\OneDrive\\Bureau\\Valex-JS\\backend\\Like.txt";
+        const path = require('path');
+        const filePath = path.join(process.env.FILE_PATH || '/var/www/valex-js/backend', 'Like.txt');
 
         // Read file content asynchronously
         const data = await fs.promises.readFile(filePath, 'utf8');

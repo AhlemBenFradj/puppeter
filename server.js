@@ -9,7 +9,7 @@ const PORT = 3000;
 // Function to start a profile using HideMyAcc API
 async function startProfile(profileId) {
     try {
-        const response = await axios.post(`http://localhost:2268/profiles/start/${profileId}`);
+        const response = await axios.post(`https://1644-197-27-123-45.ngrok-free.app/ profiles/start/${profileId}`);
         // Validate the response format
         if (response.data.code !== 1 || !response.data.data.success) {
             throw new Error('Profile start failed');
@@ -47,5 +47,5 @@ app.post('/run/:profileId/:scriptName', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on https://vmi2503077.contaboserver.net/:${PORT}`);
 });

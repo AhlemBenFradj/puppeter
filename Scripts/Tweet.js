@@ -12,7 +12,8 @@ module.exports = async (profileData) => {
 
         // Define the path to your file
         // Define the file path for Tweet.txt
-        const filePath = "C:\\Users\\ahlem\\OneDrive\\Bureau\\Valex-JS\\backend\\Tweet.txt";
+        const path = require('path');
+        const filePath = path.join(process.env.FILE_PATH || '/var/www/valex-js/backend', 'Tweet.txt');
 
         // Read file content asynchronously
         const data = await fs.promises.readFile(filePath, 'utf8');
